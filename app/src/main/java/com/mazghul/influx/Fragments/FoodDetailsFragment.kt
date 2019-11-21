@@ -42,6 +42,7 @@ class FoodDetailsFragment : Fragment() {
             )
         }
         foodDetailsList.adapter = FoodDetailsAdapter(foodReadings, fandbList.size)
+        foodDetailsList.layoutManager = linearLayoutManager
         (foodDetailsList.adapter as FoodDetailsAdapter).notifyDataSetChanged()
 
 

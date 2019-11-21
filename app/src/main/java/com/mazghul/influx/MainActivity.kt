@@ -1,5 +1,6 @@
 package com.mazghul.influx
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,10 @@ import com.mazghul.influx.Adapters.ViewPagerAdapter
 import com.mazghul.influx.Models.FBResponse
 import com.mazghul.influx.Provider.VolleyRequest
 import kotlinx.android.synthetic.main.activity_main.*
+import android.graphics.drawable.GradientDrawable
+import android.widget.LinearLayout
+
+
 
 
 var no_of_categories = -1
@@ -19,7 +24,15 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val linearLayout = tabLayout.getChildAt(0) as LinearLayout
+        linearLayout.showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
+        val drawable = GradientDrawable()
+        drawable.setColor(resources.getColor(R.color.line))
+        drawable.setSize(5, 1)
+        linearLayout.dividerPadding = 20
+        linearLayout.dividerDrawable = drawable
 
         val mRequestQueue = Volley.newRequestQueue(this)
         //    mProgressDialog.show();

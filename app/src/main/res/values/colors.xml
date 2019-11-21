@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="fb_yellow">#fed831</color>
+    <color name="line">#2b2b2b</color>
+    <color name="small_text">#989898</color>
 </resources>
